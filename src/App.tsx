@@ -42,7 +42,7 @@ export default function App() {
       {/* Navbar */}
       <nav className="fixed w-full bg-white shadow z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold">Varun Sharmerretdfgdfga</h1>
+          <h1 className="text-xl font-bold">Varun Sharmerretdfgdfgsdra</h1>
           <div className="md:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
