@@ -43,9 +43,9 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
 
     - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.6.6
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.6.6
 
     - name: Deploy Terraform
       working-directory: ./terraform
