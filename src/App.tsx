@@ -29,8 +29,10 @@ export default function App() {
 
       if (response.ok) {
         alert("Subscribed successfully!");
+        window.location.reload();
       } else {
         alert("Subscription failed!");
+        window.location.reload();
       }
     } catch (err) {
       console.error("Error while subscribing:", err);
@@ -101,14 +103,9 @@ export default function App() {
                 building and optimizing complex OpenSearch/Elasticsearch queries
                 and algorithms to enhance search performance and relevance.
                 Hands-on experience with migration of legacy systems to AWS,
-                including transitioning from Heroku to AWS. Skilled in REST API
-                design, containerization with Docker, CI/CD pipelines using AWS
-                CodePipeline, and infrastructure automation with CloudFormation.
-                Adept at improving application performance, ensuring system
-                reliability, and reducing operational costs through automation
-                and optimized backend architecture. Collaborative team player
-                with a problem-solving mindset and a passion for delivering
-                high-quality, scalable solutions.
+                including transitioning from Heroku to AWS. Collaborative team
+                player with a problem-solving mindset and a passion for
+                delivering high-quality, scalable solutions.
               </p>
               <button
                 onClick={() => scrollTo("contact")}
@@ -135,9 +132,129 @@ export default function App() {
 
         <section
           id="Projects"
-          className="min-h-screen bg-white flex justify-center items-center px-4"
+          className="min-h-screen bg-white flex flex-col items-center px-4 py-20 mt-5"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold">Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-8">Projects</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl">
+            {/* First Project */}
+            <div className="p-4 rounded shadow-2xl">
+              <p
+                className="text-gray-600 mb-4 mt-5 text-2xl font-bold text-left"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Blood Donation App
+              </p>
+              <p
+                className="text-gray-600 mb-4 mt-5 text-xl font-normal"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                In this web app, a user can become a donor and someone who wants
+                to connect with that donor can easily connect.
+              </p>
+              <div className="flex space-x-6 mt-6 text-3xl text-blue-700">
+                <i className="devicon-react-original colored"></i>
+                <i className="devicon-nodejs-plain-wordmark colored"></i>
+                <i className="devicon-mongodb-plain-wordmark colored"></i>
+                <i className="devicon-express-original colored"></i>
+              </div>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://www.youtube.com/watch?v=LTOvl8RLGC0",
+                    "_blank"
+                  )
+                }
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  backgroundColor: "#D97707",
+                }}
+                className="text-white mt-9 px-4 py-2 rounded-lg w-40 text-xl transition-transform duration-300 transform hover:scale-105 inline-block"
+              >
+                Demo
+              </button>
+            </div>
+
+            {/* Second Project */}
+            <div className="p-4 rounded shadow-2xl">
+              <p
+                className="text-gray-600 mb-4 mt-5 text-2xl font-bold text-left"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Chanakya Vidya Mandir
+              </p>
+              <p
+                className="text-gray-600 mb-4 mt-5 text-xl font-normal"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                School Landing Page built using modern web technology. It
+                utilizes a responsive design approach.Hosted on{" "}
+                <span className="font-semibold">PythonAnyWhere</span>.
+              </p>
+              <div className="flex space-x-6 mt-6 text-3xl text-blue-700">
+                <i className="devicon-python-plain colored"></i>
+                <i className="devicon-django-plain colored"></i>
+                <i className="devicon-bootstrap-plain colored"></i>
+                <i className="devicon-javascript-plain colored"></i>
+              </div>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://chanakyavidyamandir.pythonanywhere.com/",
+                    "_blank"
+                  )
+                }
+                style={{
+                  fontFamily: "'Montserrat', sans-serif",
+                  backgroundColor: "#D97707",
+                }}
+                className="text-white mt-9 px-4 py-2 rounded-lg w-40 text-xl transition-transform duration-300 transform hover:scale-105 inline-block"
+              >
+                Demo
+              </button>
+            </div>
+
+            {/* Third Project (Full width) */}
+            <div className=" md:col-span-2 flex justify-center mt-6">
+              <div className="p-4 rounded shadow-2xl w-full max-w-md text-left">
+                <p
+                  className="text-gray-600 mb-4 mt-5 text-2xl font-bold"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  Tesla Stock API
+                </p>
+                <p
+                  className="text-gray-600 mb-4 mt-5 text-xl font-normal"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  This project simply fetch data from api which tell the
+                  information about tesla prices and simply showup in the Charts
+                  using google charts.
+                </p>
+                <div className="flex space-x-6 mt-6 text-3xl text-blue-700">
+                  <i className="devicon-javascript-plain"></i>
+                  <i className="devicon-html5-plain colored"></i>
+                  <i className="devicon-github-original colored"></i>
+                  <i className="devicon-css3-plain-wordmark colored"></i>
+                </div>
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://varunsharma2k1.github.io/TeslaStock/",
+                      "_blank"
+                    )
+                  }
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    backgroundColor: "#D97707",
+                  }}
+                  className="text-white mt-9 px-4 py-2 rounded-lg w-40 text-xl transition-transform duration-300 transform hover:scale-105 inline-block"
+                >
+                  Demo
+                </button>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section
