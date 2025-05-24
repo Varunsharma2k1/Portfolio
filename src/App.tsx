@@ -59,7 +59,7 @@ export default function App() {
               menuOpen ? "flex" : "hidden"
             } md:flex flex-col md:flex-row gap-4 md:gap-6 absolute md:static bg-white top-full left-0 w-full md:w-auto px-4 py-4 md:p-0 shadow md:shadow-none z-40`}
           >
-            {["About", "Projects", "Experience"].map((section) => (
+            {["About", "Experience", "Projects", "contact"].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollTo(section)}
@@ -130,15 +130,118 @@ export default function App() {
           </div>
         </div>
 
+        <div id="Experience" className="max-w-6xl mx-auto px-4 py-20 mt-5">
+          <h2
+            className="text-3xl md:text-4xl font-semibold mb-8 text-center"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            Experience
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mt-20">
+            {/* Image on left */}
+            <div className="md:col-span-5 order-1 md:order-1 flex">
+              <img
+                src="/logo.jpg"
+                alt="Profile"
+                className="w-90 h-80 object-contain p-4"
+              />
+            </div>
+
+            {/* Title and description on right */}
+            <div className="md:col-span-7 order-2 md:order-2 bg-white p-4 flex flex-col justify-center">
+              <h1
+                className="text-2xl font-semibold leading-tight text-gray-900 mb-3"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                System Engineer
+              </h1>
+              <p className="text-normal italic  font-normal leading-tight text-gray-900 mb-3">
+                Dec 2023 - Present
+              </p>
+              <p
+                className="text-gray-600 font-medium"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Architected and implemented scalable Node.js/Express back-end
+                microservices and RESTful APIs for a large-scale pharmaceutical
+                application, leveraging AWS (EC2, ECS, Load Balancing, Lambda)
+                to improve system reliability, performance, and support rapid
+                growth Engineered migration of legacy on-premises systems to AWS
+                cloud infrastructure, streamlining infrastructure management and
+                reducing operational overhead by 35%, while boosting scalability
+                and resiliency.
+              </p>
+            </div>
+          </div>
+
+          <div className="hidden md:flex h-full ml-5">
+            <svg
+              width="8"
+              height="100%"
+              viewBox="0 0 6 100"
+              preserveAspectRatio="none"
+            >
+              <circle cx="3" cy="3" r="3" fill="#b45f06" />
+              <line
+                x1="3"
+                y1="6"
+                x2="3"
+                y2="94"
+                stroke="#b45f06"
+                strokeWidth="2"
+              />
+              <circle cx="3" cy="97" r="3" fill="#b45f06" />
+            </svg>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 ">
+            {/* Image on left */}
+            <div className="md:col-span-5 order-1 md:order-1 flex">
+              <img
+                src="/mrric.png"
+                alt="Profile"
+                className="w-90 h-80 object-contain p-4"
+              />
+            </div>
+
+            {/* Title and description on right */}
+            <div className="md:col-span-7 order-2 md:order-2 bg-white p-4 flex flex-col justify-center">
+              <h1
+                className="text-2xl font-semibold leading-tight text-gray-900 mb-3"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Full Stack Developer Intern
+              </h1>
+              <p className="text-normal italic  font-normal leading-tight text-gray-900 mb-3">
+                Jan 2023 - June 2023
+              </p>
+              <p
+                className="text-gray-600 font-medium"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                As a full stack developer intern at the MRIIC department of
+                Manav Rachna University. I delved into cutting-edge technologies
+                such as Django and the MERN stack, and gained a foundational
+                understanding of Docker and Kubernetes. Played a pivotal role in
+                a project involving API management, development, and integration
+                with cloud databases, among other responsibilities. Contributed
+                to the development of landing pages using HTML, CSS, JavaScript,
+                and Bootstrap.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <section
           id="Projects"
           className="min-h-screen bg-white flex flex-col items-center px-4 py-20 mt-5"
         >
           <h2 className="text-3xl md:text-4xl font-semibold mb-8">Projects</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl ">
             {/* First Project */}
-            <div className="p-4 rounded shadow-2xl">
+            <div className="p-4 rounded shadow-2xl ">
               <p
                 className="text-gray-600 mb-4 mt-5 text-2xl font-bold text-left"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -256,49 +359,104 @@ export default function App() {
             </div>
           </div>
         </section>
+      </div>
+      <div id="contact">
+        <footer className="bg-white dark:bg-gray-900">
+          <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div className="md:flex md:justify-between">
+              <div className="mb-6 md:mb-0">
+                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                  Join the newsLetter
+                </span>
 
-        <section
-          id="Experience"
-          className="min-h-screen bg-gray-100 flex justify-center items-center px-4"
-        >
-          <h2 className="text-3xl md:text-4xl font-semibold">Experience</h2>
-        </section>
+                {/* Newsletter Form moved here */}
+                <form
+                  onSubmit={handleSubscribe}
+                  className="w-full max-w-md space-y-2 mt-4"
+                >
+                  <div className="flex flex-col sm:flex-row">
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      className="flex-1 px-4 py-2 border border-gray-300 rounded sm:rounded-l sm:rounded-r-none focus:outline-none"
+                    />
+                    <button
+                      type="submit"
+                      style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        backgroundColor: "#7707d9",
+                      }}
+                      className="text-white px-4 py-2 rounded sm:rounded-r sm:rounded-l-none mt-2 sm:mt-0"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+              </div>
 
-        <section
-          id="contact"
-          className="min-h-screen bg-white flex flex-col items-center justify-center px-4"
-        >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-            Contact Me
-          </h2>
-
-          {/* Newsletter */}
-          <form
-            onSubmit={handleSubscribe}
-            className="w-full max-w-md space-y-2"
-          >
-            <div className="flex flex-col sm:flex-row">
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 border border-gray-300 rounded sm:rounded-l sm:rounded-r-none focus:outline-none"
-              />
-              <button
-                type="submit"
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  backgroundColor: "#7707d9",
-                }}
-                className=" text-white px-4 py-2 rounded sm:rounded-r sm:rounded-l-none mt-2 sm:mt-0 "
-              >
-                Subscribe
-              </button>
+              <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                  <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                    Follow Me
+                  </h2>
+                  <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                    <li className="mb-4">
+                      <a
+                        href="https://www.linkedin.com/in/varun-sharma-76a3bb184"
+                        className="hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LinkedIn
+                      </a>
+                    </li>
+                    <li className="mb-4">
+                      <a
+                        href="https://github.com/Varunsharma2k1"
+                        className="hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Github
+                      </a>
+                    </li>
+                    <li className="mb-4">
+                      <a
+                        href="https://www.youtube.com/@VarunSharma-ke8vs"
+                        className="hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Youtube
+                      </a>
+                    </li>
+                    <li className="mb-4">
+                      <a
+                        href="mailto:varunsharma2k1@gmail.com"
+                        className="hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Email
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </form>
-        </section>
+
+            <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+            <div className="text-center">
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                © 2025 Varun Sharma . All Rights Reserved.
+              </span>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
