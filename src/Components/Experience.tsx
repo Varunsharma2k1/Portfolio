@@ -18,7 +18,7 @@ function Experience() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-19 ">
       <h1
-        className="text-4xl sm:text-5xl font-bold text-primary flex items-center justify-center mb-16"
+        className="text-4xl sm:text-5xl font-semibold text-primary flex items-center justify-center mb-16"
         style={{ opacity: 1, transform: "none" }}
       >
         <svg
