@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { FaMusic } from "react-icons/fa";
-
 interface NavbarProps {
   scrollTo: (id: string) => void;
 }
