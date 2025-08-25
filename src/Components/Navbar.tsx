@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { FaMusic } from "react-icons/fa";
 
 interface NavbarProps {
@@ -6,35 +6,7 @@ interface NavbarProps {
 }
 
 function Navbar({ scrollTo }: NavbarProps) {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  // Auto-play on mount
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.5;
-      audioRef.current.loop = true;
-      audioRef.current
-        .play()
-        .then(() => setIsPlaying(true))
-        .catch((err) => console.warn("Autoplay failed:", err));
-    }
-  }, []);
-
-  const handlePlayToggle = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-        setIsPlaying(false);
-      } else {
-        audioRef.current.play().catch((err) => {
-          console.warn("Failed to play audio:", err);
-        });
-        setIsPlaying(true);
-      }
-    }
-  };
 
   return (
     <nav className="fixed w-full bg-gray-900 shadow z-50">
@@ -70,18 +42,6 @@ function Navbar({ scrollTo }: NavbarProps) {
           >
             Resume
           </a>
-
-          <button
-            onClick={handlePlayToggle}
-            className="px-3 py-3 rounded-full bg-purple-600 text-white shadow-md hover:bg-purple-700"
-          >
-            <audio
-              ref={audioRef}
-              src="/The-Open-Sky-chosic.com_.mp3"
-              preload="auto"
-            />
-            <FaMusic className="text-sm" />
-          </button>
         </div>
 
         {/* Mobile Dropdown */}
@@ -114,18 +74,6 @@ function Navbar({ scrollTo }: NavbarProps) {
           >
             Resume
           </a>
-
-          <button
-            onClick={handlePlayToggle}
-            className="w-10 h-10 sm:w-auto sm:px-4 py-2 rounded-full bg-purple-600 text-white shadow-md hover:bg-purple-700 flex items-center justify-center"
-          >
-            <audio
-              ref={audioRef}
-              src="/The-Open-Sky-chosic.com_.mp3"
-              preload="auto"
-            />
-            <FaMusic className="text-base" />
-          </button>
         </div>
       </div>
     </nav>
