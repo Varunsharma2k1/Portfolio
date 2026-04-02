@@ -20,28 +20,24 @@ import {
   SiAmazon,
   SiTerraform,
   SiGooglechat,
+  SiOpensearch, 
+  SiHuggingface, 
 } from "react-icons/si";
+import { 
+  GiBrain, 
+  GiSettingsKnobs 
+} from "react-icons/gi";
 
 // Define allowed tech keys
 type TechName =
-  | "React"
-  | "Python"
-  | "Django"
-  | "Bootstrap"
-  | "JavaScript"
-  | "Node.js"
-  | "MongoDB"
-  | "Express"
-  | "S3"
-  | "CloudFront"
-  | "Lambda"
-  | "Terraform"
-  | "HTML"
-  | "CSS"
-  | "Google Charts";
+  | "React" | "Python" | "Django" | "Bootstrap" | "JavaScript"
+  | "Node.js" | "MongoDB" | "Express" | "S3" | "CloudFront"
+  | "Lambda" | "Terraform" | "HTML" | "CSS" | "Google Charts"
+  | "NLP" | "Vector Embeddings" | "OpenSearch" | "Transformers";
 
 // Icon map with explicit type
 const iconMap: Record<TechName, JSX.Element> = {
+  // Existing Tech
   React: <FaReact className="inline mr-1 text-cyan-400" />,
   Python: <FaPython className="inline mr-1 text-yellow-400" />,
   Django: <SiDjango className="inline mr-1 text-green-500" />,
@@ -57,9 +53,23 @@ const iconMap: Record<TechName, JSX.Element> = {
   HTML: <FaHtml5 className="inline mr-1 text-orange-500" />,
   CSS: <FaCss3Alt className="inline mr-1 text-blue-500" />,
   "Google Charts": <SiGooglechat className="inline mr-1 text-red-400" />,
+
+  // --- New AI & Search Tech ---
+  "NLP": <GiBrain className="inline mr-1 text-pink-400" />,
+  "Vector Embeddings": <GiSettingsKnobs className="inline mr-1 text-indigo-400" />,
+  "OpenSearch": <SiOpensearch className="inline mr-1 text-blue-500" />,
+  "Transformers": <SiHuggingface className="inline mr-1 text-yellow-400" />,
 };
 
 const projectCards = [
+   {
+    title: "Vector-Based Product Retrieval System",
+    description:
+      "semantic search tool that understands that if you're looking for a 'corporate commute' outfit, you probably want a blazer—even if the word 'corporate' isn't in the product description. Powered by OpenSearch and AI Embeddings, it moves search from simple word-matching to true human-like understanding",
+    tech: ["NLP", "Vector Embeddings", "OpenSearch", "Node.js", "Transformers"],
+    link: "https://vector-search-pi.vercel.app/",
+    repo: "https://github.com/Varunsharma2k1/VectorSearch",
+  },
   {
     title: "Chanakya Vidya Mandir",
     description:
